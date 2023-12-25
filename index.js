@@ -6,7 +6,7 @@ require("dotenv").config();
 const stripe = require("stripe")(process.env.SECRET_KEY);
 
 const app = express();
-app.use(cors({ origin: true }));
+app.use(cors());
 app.use(express.json());
 app.get("/", (request, response) => response.status(200).send("hello world"));
 app.post("/payments/create", async (request, response) => {
